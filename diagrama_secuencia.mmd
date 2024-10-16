@@ -1,0 +1,22 @@
+
+sequenceDiagram
+    participant Cliente
+    participant Servidor
+
+    Cliente->>Servidor: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Servidor-->>Cliente: Redirección a https://studies.cs.helsinki.fi/exampleapp/notes
+    Servidor-->>Cliente: Código HTTP 302
+
+    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Servidor-->>Cliente: Código HTML
+
+    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Servidor-->>Cliente: main.css
+
+    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Servidor-->>Cliente: main.js
+
+    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Servidor-->>Cliente: data.json [content: {...}, {...}, {...}, {...}]
+
+    Cliente->>Cliente: Ejecutar controlador de eventos que muestra notas

@@ -14,10 +14,10 @@ sequenceDiagram
     Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
     Servidor-->>Cliente: main.css
 
-    Note over Cliente: El navegador comienza a ejecutar código js que solicita datos JSON del servidor
-
     Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
     Servidor-->>Cliente: main.js
+
+    Note over Cliente: El navegador comienza a ejecutar código js que solicita datos JSON del servidor
 
     Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
     Servidor-->>Cliente: data.json [content: {...}, {...}, {...}, {...}]

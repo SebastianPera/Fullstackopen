@@ -5,7 +5,7 @@ sequenceDiagram
 
     Cliente->>Servidor: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
     Servidor-->>Cliente: Redirección a https://studies.cs.helsinki.fi/exampleapp/notes
-    Servidor-->>Cliente: Código HTTP 302
+    Note right of Servidor: Código HTTP 302
 
     Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
     Servidor-->>Cliente: Código HTML

@@ -5,6 +5,6 @@ sequenceDiagram
     Cliente->>Servidor: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     Note over Servidor: La petición POST a la dirección new_notes_spa contiene la nueva nota
     Servidor-->>Cliente: El servidor responde con un código de estado 201. 
-    Note over Servidor: El navegador del cliente no se recarga y permanece en la misma página
+    Note over Cliente: El navegador del cliente no se recarga y permanece en la misma página
    
     

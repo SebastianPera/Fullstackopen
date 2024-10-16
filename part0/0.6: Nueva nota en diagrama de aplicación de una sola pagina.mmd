@@ -2,23 +2,9 @@ sequenceDiagram
     participant Cliente
     participant Servidor
 
-    Cliente->>Servidor: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
-     Note over Servidor: Código HTTP 302
-    Servidor-->>Cliente: Redirección a https://studies.cs.helsinki.fi/exampleapp/notes
+    Cliente->>Servidor: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note over Servidor: La petición POST a la dirección new_notes_spa contiene la nueva nota
+    Servidor-->>Cliente: El servidor responde con un código de estado 201. 
+    Note over Servidor: El navegador del cliente no se recarga y permanece en la misma página
    
-
-    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
-    Servidor-->>Cliente: Código HTML
-
-    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    Servidor-->>Cliente: main.css
-
-    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
-    Servidor-->>Cliente: main.js
-
-    Note over Cliente: El navegador comienza a ejecutar código js que solicita datos JSON del servidor
-
-    Cliente->>Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    Servidor-->>Cliente: data.json [content: {...}, {...}, {...}, {...}]
-
-    Note over Cliente: Se ejecutaa el controlador de eventos que muestra notas
+    
